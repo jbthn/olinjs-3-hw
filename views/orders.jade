@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  br
+  table(cellpadding = 5)
+      tr
+        td <b> Customer Name
+        td <b> Ingredients Requested
+        td <b> Status
+      each order in orders
+        tr(id=order._id)
+          td #{order.customerName}
+          td
+            each ingredient in order.ingredients
+              | #{ingredient.name}
+              br
+          td
+            input(type='button', name=order._id, value = 'Mark complete')

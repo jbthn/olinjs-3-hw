@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Enter in an ingredient and cost below.
+  br
+  form(method='post', action='/ingredient/create')
+    | Ingredient name: 
+    input(type='text', name='name')
+    &nbsp;
+    | Cost: 
+    input(type='text', name='cost')
+    &nbsp;
+    input(type='submit', value='Submit ingredient')
